@@ -1,28 +1,9 @@
 import numpy as np
 import os
-from AI_TOOLS.AI import *
+from utils.classes import *
 
 def clear():
-    os.system( 'cls' )
-
-class ActivationSoftmax:
-    def forward(self, inputs):
-        self.output = inputs[0][0].__round__()
-
-class Loss:
-    def calculate(self, output, y):
-        sample_losses = self.forward(output, y)
-        
-        return np.mean(sample_losses)
-    
-class Loss_CategoricalCrossentropy(Loss):
-    def forward(self, y_pred, y_true):
-        samples = len(y_pred)
-        losses = []
-        for o in range(samples):
-            losses.append(abs(y_true[o]-y_pred[o]))
-        return losses
-
+    os.system( 'clear' )
 
 provided_inputs = [
     [0, 0],
@@ -74,6 +55,7 @@ for iteration in range(100000):
     loss = loss_function.calculate(dense2.output, expected_outputs)
 
     if loss < lowest_loss:
+        #print("Found a better weight/bias combination! Loss: ", loss, ", Output:", dense2.output)
         best_dense1_weights = dense1.weights.copy()
         best_dense1_biases = dense1.biases.copy()
         best_dense2_weights = dense2.weights.copy()
