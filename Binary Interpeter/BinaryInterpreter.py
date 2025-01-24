@@ -1,14 +1,14 @@
 import numpy as np
 import os
-from utils.classes import NeuronLayer, ActivationReLU, ActivationSoftmax
+from utils.classes import NeuronLayer, ActivationReLU, ActivationSoftmax, Loss_CategoricalCrossentropy
 
 def clear():
     os.system( 'clear' )
 
 provided_inputs = [
     [0, 0],
-    [1, 0],
     [0, 1],
+    [1, 0],
     [1, 1]
 ]
 
