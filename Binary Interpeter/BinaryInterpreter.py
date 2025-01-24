@@ -1,6 +1,6 @@
 import numpy as np
 import os
-from utils.classes import *
+from utils.classes import NeuronLayer, ActivationReLU, ActivationSoftmax
 
 def clear():
     os.system( 'clear' )
