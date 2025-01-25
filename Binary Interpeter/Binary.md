@@ -36,7 +36,7 @@ activation2 = ActivationSoftmax()
 This section of the code is where I defined everything that will shape the AI. The ```provided_inputs``` and ```expected_inputs``` values will be used during [training](#training) to make sure we get the right values we want.  
 ```dense1``` and ```dense2``` are our [Neural Layers](./utils/classes.py#L3). These are where we input data and get a processed output that simulates a neural network.  
 According to the code ```dense1``` is a neural layer that takes two inputs and returns 4 outputs. ```dense2``` takes in the 4 inputs and returns another 4 outputs.  
-Last, but not least, the ```activation1``` and ```activation2``` are [Activation Classes](./utils/classes.py#L10). These classes process information in-between neural layers.
+Last, but not least, the ```activation1``` and ```activation2``` are [Activation Classes](./utils/classes.py#L10-L19). These classes process information in-between neural layers.
 
 ## Training
 
