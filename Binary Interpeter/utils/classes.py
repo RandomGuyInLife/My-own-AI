@@ -12,11 +12,8 @@ class ActivationReLU:
         self.output = np.maximum(0, inputs)
 
 class ActivationSoftmax:
-    def forward(self, inputs: list[list[float]]):
-        outputs = 0
-        for i in range(inputs[0].__len__()):
-            outputs += inputs[0][i]
-        self.output = (outputs/inputs[0].__len__()).__round__()
+    def forward(self, inputs):
+        self.output = inputs[0].__round__()
 
 class Loss:
     def calculate(self, output, y):
