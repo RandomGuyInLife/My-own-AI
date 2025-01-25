@@ -3,7 +3,7 @@ import os
 from utils.classes import NeuronLayer, ActivationReLU, ActivationSoftmax, Loss_CategoricalCrossentropy
 
 def clear():
-    os.system( 'clear' )
+    os.system( 'cls' )
 
 provided_inputs = [
     [0, 0],
@@ -22,7 +22,7 @@ expected_outputs = [
 dense1 = NeuronLayer(2,4)
 activation1 = ActivationReLU()
 
-dense2 = NeuronLayer(4,4)
+dense2 = NeuronLayer(4,1)
 activation2 = ActivationSoftmax()
 
 dense1.forward(provided_inputs)
@@ -55,7 +55,7 @@ for iteration in range(100000):
     loss = loss_function.calculate(dense2.output, expected_outputs)
 
     if loss < lowest_loss:
-        #print("Found a better weight/bias combination! Loss: ", loss, ", Output:", dense2.output)
+        #print("Found a better weight/bias combination! Loss: ", loss, ", Output:", dense2.output, ", Iteration:", iteration)
         best_dense1_weights = dense1.weights.copy()
         best_dense1_biases = dense1.biases.copy()
         best_dense2_weights = dense2.weights.copy()
@@ -74,12 +74,12 @@ print("AI trained and ready!")
 running = True
 
 while running:
-    input1 = input("Please enter a single byte (1 or 0) or type exit:")
+    input1 = input("Please enter a single byte (1 or 0) or type exit: ")
     if input1 == "exit":
         running = False
         break
     elif input1 == "1" or input1 == "0":
-        input2 = input("Please enter another single byte (1 or 0) or type exit:")
+        input2 = input("Please enter another single byte (1 or 0) or type exit: ")
         if input2 == "exit":
             running = False
             break
